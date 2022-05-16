@@ -20,7 +20,7 @@ public class PlayerMovimetJoystic : MonoBehaviour
     {
         movePlayer();
         animationPlayer();
-        Ataque();
+       
     }
 
     
@@ -31,8 +31,8 @@ public class PlayerMovimetJoystic : MonoBehaviour
         moveH = moveJoystic.joystick.joystickX;
         moveV = moveJoystic.joystick.joystickY; 
         Vector3 dir = new Vector3(moveH,0, moveV);
-        //rb.velocity = new Vector3(moveH*SpeedMove, rb.velocity.y, moveV*SpeedMove);
-        rb.velocity = dir*SpeedMove;
+        rb.velocity = new Vector3(moveH*SpeedMove, rb.velocity.y, moveV*SpeedMove);
+        //rb.velocity = dir*SpeedMove;
         
         if(dir != Vector3.zero){
             transform.LookAt(transform.position + dir);
@@ -43,14 +43,5 @@ public class PlayerMovimetJoystic : MonoBehaviour
         Animacao.SetFloat("HorizontalMove",moveH);
         Animacao.SetFloat("VerticalMove",moveV);
     }
-    public void Ataque(){
-        if(Input.GetKeyDown(KeyCode.Space)){
-        //Animacao.SetBool("Atacar", true);
-        Debug.Log("A");
-        }
-        if(Input.GetKeyUp(KeyCode.Space)){
-        //Animacao.SetBool("Atacar", false);
-        Debug.Log("B");
-        }
-    }
+    
 }
