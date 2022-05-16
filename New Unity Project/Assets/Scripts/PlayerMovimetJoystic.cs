@@ -9,9 +9,8 @@ public class PlayerMovimetJoystic : MonoBehaviour
     private Rigidbody rb;
     private float moveH,moveV;
     public float SpeedMove = 5;
-    public bool Atacando;
     
-     //public int SpeedMove = 5;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,7 +20,7 @@ public class PlayerMovimetJoystic : MonoBehaviour
     {
         movePlayer();
         animationPlayer();
-        //Ataque();
+        Ataque();
     }
 
     
@@ -44,7 +43,7 @@ public class PlayerMovimetJoystic : MonoBehaviour
         Animacao.SetFloat("HorizontalMove",moveH);
         Animacao.SetFloat("VerticalMove",moveV);
     }
-    /*public void Ataque(){
+    public void Ataque(){
         if(Input.GetKeyDown(KeyCode.Space)){
         //Animacao.SetBool("Atacar", true);
         Debug.Log("A");
@@ -53,5 +52,5 @@ public class PlayerMovimetJoystic : MonoBehaviour
         //Animacao.SetBool("Atacar", false);
         Debug.Log("B");
         }
-    }*/
+    }
 }
